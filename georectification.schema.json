@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "georectify-json-spec.schema",
+  "type": "object",
+  "definitions": {
+    "source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "dimensions": {
+          "$ref": "#/definitions/coordinate"
+        }
+      }
+    },
+    "map": {
+      "type": "object",
+      "properties": {
+        "mask": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/coordinate"
+          }
+        },
+        "gcps": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/gcp"
+          }
+        }
+      }
+    },
+    "coordinate": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "number"
+      }
+    },
+    "gcp": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/coordinate"
+        },
+        "world": {
+          "$ref": "#/definitions/coordinate"
+        }
+      }
+    }
+  },
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/source"
+      },
+      "minItems": 1
+    },
+    "maps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/map"
+      }
+    }
+  }
+}
