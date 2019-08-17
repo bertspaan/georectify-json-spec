@@ -11,6 +11,9 @@
   ],
   "maps": [
     {
+      "transformation": {
+        "type": "affine"
+      },
       "mask": [
         [
           0.17684407096171803,

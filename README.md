@@ -1,48 +1,27 @@
-oplossen:
+# georectify-json-spec
 
-bestand moet 2 maskers!!!
+Draft specification for JSON data model for map georectification.
 
+Created during [Wikimania Hackathon 2019](https://wikimania.wikimedia.org/wiki/2019:Hackathon).
 
+## Goal
 
+There is need for a single way to describe georectified (historical) maps.
 
+This data model should specify the following properties:
 
-OF:
+  - the mapping between pixels on the scanned map and geospatial coordinates,
+  - the masking/clipping polygon to remove non-cartographic material,
+  - the source (or multiple sources) of the map image,
+  - the transformation type
 
+## JSON Schema
 
-image heeft pixelmasker
+This repository holds a JSON Schema to verify and describe JSON data with map georectification data.
 
+## See also
 
-
-en dan geotiff is nieuw ding, heeft latlongmasker!!!
-
-
-
-
-
-========================================================================
-========================================================================
-========================================================================
-
-
-Origineel:
-
-  - Masker in pixels
-  - GCPs: pixels -> lat/lon
-  - Dimensies: [w, h]
-  - brontype: [IIIF, wikicommons, ...]
-
-Warped:
-
-  - Masker in lat/lon
-  - GCPs
-  - Dimensies: [w, h]
-  - brontype: [iiif, commons, geotiff, TMS, ...]
-  - source: link to original
-
-
-image:
-  prop:mask -> [pixels]
-  prop GCPs -> Data:tab file
-
-  generated:
-  prop:mask -> [lat/long]
+- https://observablehq.com/@bertspaan/proposal-for-wikimania-2019-hackathon
+- https://phabricator.wikimedia.org/T227036
+- https://github.com/bertspaan/wikimania-hackathon-2019
+- https://github.com/bertspaan/georectify-service

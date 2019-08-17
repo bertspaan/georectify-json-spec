@@ -36,6 +36,21 @@
     "map": {
       "type": "object",
       "properties": {
+        "transformation": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "affine",
+                "norotation",
+                "noskew",
+                "polynomial",
+                "tps"
+              ]
+            }
+          }
+        },
         "mask": {
           "type": "array",
           "items": {
