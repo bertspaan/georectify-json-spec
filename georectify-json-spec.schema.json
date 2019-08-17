@@ -3,6 +3,13 @@
   "$id": "https://bertspaan.nl/georectify-json-spec/georectify-json-spec.schema.json",
   "type": "object",
   "definitions": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/source"
+      },
+      "minItems": 1
+    },
     "source": {
       "type": "object",
       "properties": {
@@ -18,6 +25,12 @@
         "dimensions": {
           "$ref": "#/definitions/coordinate"
         }
+      }
+    },
+    "maps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/map"
       }
     },
     "map": {
@@ -60,17 +73,10 @@
   },
   "properties": {
     "sources": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/source"
-      },
-      "minItems": 1
+      "$ref": "#/definitions/sources"
     },
     "maps": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/map"
-      }
+      "$ref": "#/definitions/maps"
     }
   }
 }

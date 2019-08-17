@@ -12,10 +12,7 @@
       "type": "object",
       "properties": {
         "sources": {
-          "type": "array",
-          "items": {
-            "$ref": "../georectify-json-spec.schema.json#/definitions/coordinate"
-          }
+          "$ref": "./georectify-json-spec.schema.json#/definitions/sources"
         },
         "area": {
           "type": "number",
